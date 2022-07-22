@@ -1,0 +1,824 @@
+@import url('assets/font/font.css');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ------------------------------------------------------
+ |                My Root Start                         |
+ ----------------------------------------------------- */
+ :root{
+  /* ------------- For My Theme Color -------------*/
+    --dark: #101820FF;
+    --darkest: #000B29;
+    --semi-dark:#252620;
+    --gold: #FFD700;
+    --light: #F8F5F2;
+    --yellow: #FEE715FF;
+    --red: #D70026;
+    --bg: #737373;
+    --gray:#71797E;
+    --bg-hr: #E0DEDE;
+    --fb: #3b5998;
+    --twit: #1DA1F2;
+    --google: #db4a39;
+    --yt: red;
+    --ins: #d6249f;
+    --silver: #c0c0c0;
+    --text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    /* ------------- For My Theme Fonts -------------*/
+    --font-title: "Heavitas";
+    --p-font: "Roboto";
+    --sign-one: "Amalfi Coast";
+    --sign-two: "Austria";
+
+
+ }
+
+
+ /* -------------------------------------------------------
+ |                 Custom Scroll Bar Start                |
+ ------------------------------------------------------ */
+
+ ::-webkit-scrollbar {
+   width: 10px;
+ }
+
+ ::-webkit-scrollbar-track {
+   background: var(--light);
+ }
+
+ ::-webkit-scrollbar-thumb {
+   background: var(--dark);
+ }
+
+ ::-webkit-scrollbar-thumb:hover {
+   background: var(--gold);
+ }
+
+ /* -------------------------------------------------------
+ |                 Custom Scroll Bar End                  |
+ ------------------------------------------------------ */
+ /* -------------------------------------------------------
+ |      all similar content styling codes  Start          |
+ ------------------------------------------------------ */
+h1, 
+h2, 
+h3, 
+h4{
+  font-family: var(--font-title);
+}
+
+h5,
+h6,
+p, 
+a {
+  font-family: var(--p-font);
+}
+hr {
+  height: 1px;
+  border: none;
+  background-color: var(--bg-hr);
+}
+section{
+    padding: 20px 0;
+}
+section .heading-title {
+  position: relative;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: var(--font-title);
+  letter-spacing: 5px;
+}
+
+section .heading-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 300px;
+  height: 3px;
+  background: #111;
+  color: var(--darkest);
+  transform: translateX(-50%);
+}
+
+section .heading-title::after {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--red);
+  padding: 0 5px;
+  background: #fff;
+  transform: translateX(-50%);
+  font-family: var(--sign-one);
+}
+
+.title-span{
+  color: var(--red);
+}
+
+  /* -------------------------------------------------------
+ |      all similar content styling codes  End             |
+ ------------------------------------------------------ */
+
+ /* -------------------------------------------------------
+ |                Custom Scroll-up Btn Start              |
+ ------------------------------------------------------ */
+.scrollToTopBtn {
+  background-color: var(--darkest);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 48px;
+  width: 48px;
+
+  /* place it at the bottom right corner */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /* keep it at the top of everything else */
+  z-index: 100;
+  /* hide with opacity */
+  opacity: 0;
+  /* also add a translate effect */
+  transform: translateY(100px);
+  /* and a transition */
+  transition: all 0.5s ease;
+  text-shadow: var(--text-shadow);
+}
+.scrollToTopBtn i{
+  color: var(--light);
+}
+.showBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+ /* -------------------------------------------------------
+ |                Custom Scroll-up Btn End                |
+ ------------------------------------------------------ */
+
+ /* --------------------------------------------------------
+ |                    My Navbar Start                      |
+ ------------------------------------------------------- */
+
+ .navbar {
+   position: fixed;
+   width: 100%;
+   z-index: 999;
+   padding: 30px 0;
+   background-color:var(--semi-dark);
+   transition: all 0.3s ease;
+ }
+ .navbar .nav-logo{
+  width: 100%;
+  height: 60px;
+ }
+ .navbar .navbar-toggler, 
+ .navbar .navbar-toggler-icon{
+  border-color: var(--bg-hr);
+ }
+
+ .navbar .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(229,229,229)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+ }
+.navbar .nav-item a.nav-link, 
+.nav-contact a.nav-link{
+  color: var(--light);
+  padding: 20px 1rem;
+  font-size: 1.2rem;
+  background: linear-gradient(to left, gold, gold) no-repeat bottom center;
+  background-size: 0% 3px;
+  transition: 0.25s;
+  display: block;
+}
+
+.navbar .nav-item a.nav-link:hover,
+.nav-contact a.nav-link:hover{
+  background-size: 100% 3px;
+    color: var(--gold);
+}
+
+ .navbar .sticky {
+   padding: 15px 0;
+   background: var(--dark);
+ }
+
+
+ /* --------------------------------------------------------
+ |                    My Navbar End                       |
+ ------------------------------------------------------- */
+
+ /* -----------------------------------------------------------------------------
+ |                     My Homepage Section Start                               |
+ ---------------------------------------------------------------------------- */
+.home-section{
+  position: center;
+  background-image: url('assets/img/banner/bg-home-two.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  background-attachment: fixed;
+}
+
+
+.home-section h1{
+  font-size: 10vh;
+  padding-top: 10%;
+}
+.home-section h3 {
+  font-size: 8vh;
+}
+.home-section h3,
+.home-section h1,
+.home-section h4,
+.home-section p{
+  color: var(--light);
+  text-shadow: var(--dark) 3px 5px 2px;
+}
+
+ /* -----------------------------------------------------------------------------
+ |                     My Homepage Section End                                 |
+ ---------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+|                     My About Section Start                               |
+ ---------------------------------------------------------------------------- */
+
+.about-section .heading-title::after {
+  content: "who I am";
+}
+.about-section .about-img{
+  width: 100%;
+  height: 300px;
+  padding: 4px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.about-section .about-img:hover{
+  transform: scale(1.05);
+}
+.about-section h3,
+.about-section p {
+  color: var(--semi-dark);
+}
+
+.heading-title {
+  color: var(--darkest);
+  text-align: center;
+  padding: 20px 0;
+}
+
+.profile {
+  text-align: justify;
+  padding-left: 30px;
+}
+
+.about-section .social-link {
+  background-color: var(--darkest);
+  font-size: 1rem;
+  color: var(--light);
+  padding: 10px;
+  width: 30px;
+  height: 20px;
+  text-shadow: var(--text-shadow);
+}
+
+.about-section .social-link:hover {
+  color: var(--gold);
+}
+
+.about-section .list-inline-item:hover {
+  transform: scale(1.05);
+}
+
+/* -----------------------------------------------------------------------------
+|                     My About Section End                                    |
+ ---------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
+|                   My Educational Section Start                                |
+ ---------------------------------------------------------------------------- */
+.education-section{
+  background: url('assets/img/banner/banner-education.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+.education-section .heading-title::after {
+  content: "history";
+}
+
+.main-timeline {
+  font-family: var(--p-font);
+}
+
+.main-timeline:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.main-timeline .timeline {
+  width: calc(50% + 110px);
+  margin: 0 0 30px;
+  float: right;
+}
+
+.main-timeline .timeline-content {
+  background: #fff;
+  padding: 25px 25px 25px 175px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+.main-timeline .timeline-content:hover {
+  text-decoration: none;
+}
+
+.main-timeline .timeline-content:before {
+  content: "";
+  background: #f59220;
+  width: 125px;
+  height: 100%;
+  border: 0 solid #b46a17;
+  border-right-width: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.main-timeline .timeline-icon {
+  color: #fff;
+  background: #b46a17;
+  font-size: 45px;
+  text-align: center;
+  line-height: 105px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 0px #fff inset, 0 0 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 62px;
+}
+
+.main-timeline .timeline-year {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 35px;
+  transform: translateY(-50%) rotate(90deg);
+  position: absolute;
+  top: 50%;
+  left: -10px;
+}
+
+.main-timeline .title {
+  color: #f59220;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.main-timeline .description {
+  color: #777;
+  font-size: 16px;
+  margin: 0;
+}
+
+.main-timeline .timeline:nth-child(even) {
+  float: left;
+}
+
+.main-timeline .timeline:nth-child(even) .timeline-content {
+  padding: 25px 175px 25px 25px;
+}
+
+.main-timeline .timeline:nth-child(even) .timeline-content:before {
+  border-left-width: 30px;
+  border-right-width: 0;
+  left: auto;
+  right: 0;
+}
+
+.main-timeline .timeline:nth-child(even) .timeline-year {
+  left: auto;
+  right: -10px;
+}
+
+.main-timeline .timeline:nth-child(even) .timeline-icon {
+  box-shadow: -1px 1px 0px #fff inset, 0 0 8px rgba(0, 0, 0, 0.4);
+  left: auto;
+  right: 62px;
+}
+
+.main-timeline .timeline:nth-child(4n+2) .timeline-content:before {
+  background: #129bbd;
+  border-color: #0c7088;
+}
+
+.main-timeline .timeline:nth-child(4n+2) .timeline-icon {
+  background: #0c7088;
+}
+
+.main-timeline .timeline:nth-child(4n+2) .title {
+  color: #129bbd;
+}
+
+.main-timeline .timeline:nth-child(4n+3) .timeline-content:before {
+  background: #f25b50;
+  border-color: #ad463b;
+}
+
+.main-timeline .timeline:nth-child(4n+3) .timeline-icon {
+  background: #ad463b;
+}
+
+.main-timeline .timeline:nth-child(4n+3) .title {
+  color: #f25b50;
+}
+
+.main-timeline .timeline:nth-child(4n+4) .timeline-content:before {
+  background: #ffa6c9;
+  border-color: #fd6c9e;
+}
+
+.main-timeline .timeline:nth-child(4n+4) .title {
+  color: #ff55a3;
+}
+
+.main-timeline .timeline:nth-child(4n+4) .timeline-icon {
+  background: #fd6c9e;
+}
+
+@media screen and (max-width:767px) {
+  .main-timeline .timeline {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:576px) {
+
+  .main-timeline .timeline,
+  .main-timeline .timeline:nth-child(even) {
+    text-align: center;
+    margin: 0 0 30px;
+  }
+
+  .main-timeline .timeline-content,
+  .main-timeline .timeline:nth-child(even) .timeline-content {
+    padding: 15px 10px 175px 10px;
+  }
+
+  .main-timeline .timeline-content:before,
+  .main-timeline .timeline:nth-child(even) .timeline-content:before {
+    width: 100%;
+    height: 123px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 30px;
+    top: auto;
+    bottom: 0;
+  }
+
+  .main-timeline .timeline-year,
+  .main-timeline .timeline:nth-child(even) .timeline-year {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+    top: auto;
+    bottom: 10px;
+    left: 50%;
+  }
+
+  .main-timeline .timeline-icon,
+  .main-timeline .timeline:nth-child(even) .timeline-icon {
+    box-shadow: -1px -1px 0px #fff inset, 0 0 8px rgba(0, 0, 0, 0.4);
+    transform: translateX(-50%) translateY(0);
+    top: auto;
+    bottom: 62px;
+    left: 50%;
+  }
+
+  .main-timeline .title {
+    font-size: 20px;
+  }
+}
+
+
+ /* -----------------------------------------------------------------------------
+|                   My Educational Section End                                 |
+ ---------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+|                        My Skills Section End                                 |
+ ---------------------------------------------------------------------------- */
+.skills-section .heading-title::after {
+  content: "what I know";
+}
+.chart {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0px;
+  color: var(--bg2);
+  font-size: 14px;
+  text-align: center;
+}
+
+.chart:hover {
+  color: var(--yellow);
+}
+
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.left {
+  display: inline-block;
+  background: var(--darkest);
+  color: var(--light);
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 2px solid var(--darkest);
+  transition: all 0.3s ease;
+}
+
+.right .bars {
+  margin-bottom: 15px;
+}
+
+.right .info {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right span {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.right .line {
+  height: 5px;
+  width: 100%;
+  background: lightgrey;
+  position: relative;
+}
+
+.right .line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: var(--red);
+}
+
+.right .html::before {
+  width: 90%;
+}
+
+.right .css::before {
+  width: 80%;
+}
+
+.right .js::before {
+  width: 70%;
+}
+
+.right .movavi::before {
+  width: 80%;
+}
+
+.right .ps::before {
+  width: 70%;
+}
+
+.right .react-native::before {
+  width: 70%;
+}
+
+.right .php::before {
+  width: 80%;
+}
+.right .firebase::before {
+  width: 70%;
+}
+
+.right .tailwind::before {
+  width: 80%;
+}
+
+.right .wordpress::before {
+  width: 70%;
+}
+
+.right .bootstrap::before {
+  width: 70%;
+}
+/* -----------------------------------------------------------------------------
+|                        My Skills Section End                                 |
+ ---------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+|               My Work Experience Section End                                 |
+ ---------------------------------------------------------------------------- */
+.work-section{
+  /*background-image: url('img/banner/banner-work.jpg');
+  background-attachment: fixed;
+  background-size: cover; */
+  background-color: var(--semi-dark);
+}
+.work-section .heading-title::after {
+  content: "work with";
+}
+
+.work-section h2,
+h3, 
+h5 {
+  color: var(--bg-hr);
+}
+.work-section p{
+  color: var(--silver);
+  font-size: 0.8rem;
+  text-align: justify;
+}
+.work-section .img-latest{
+  width: 100%;
+  height: 300px;
+}
+.work-section .img-prev {
+  width: 100px;
+  height: 150px;
+  margin-right: 10px;
+}
+.work-section .previous:hover{
+  transform: scale(1.09);
+}
+
+
+/* -----------------------------------------------------------------------------
+|               My Work Experience Section End                                 |
+ ---------------------------------------------------------------------------- */
+
+ /* -----------------------------------------------------------------------------
+|                     Contact Section End                                      |
+ ---------------------------------------------------------------------------- */
+.contact-section{
+  background-image: url("assets/img/banner/banner-contact.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.contact-section .heading-title::after {
+  content: "Get in touch";
+}
+.contact-section h3, 
+.contact-section h6 a{
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.contact-section .social-link{
+  background-color: var(--darkest);
+  font-size: 1rem;
+  color: var(--light);
+  padding: 10px;
+  width: 30px;
+  height: 20px;
+  text-shadow: var(--text-shadow);
+}
+.contact-section .social-link:hover{
+  color: var(--gold);
+}
+.contact-section .list-inline-item:hover{
+  transform: scale(1.05);
+}
+/* -----------------------------------------------------------------------------
+|                     Contact Section End                                      |
+ ---------------------------------------------------------------------------- */
+
+ /* -----------------------------------------------------------------------------
+|                     Footer Section End                                      |
+ ---------------------------------------------------------------------------- */
+.footer{
+  background-color: var(--semi-dark);
+}
+
+.footer h6{
+  color: var(--light);
+}
+
+.footer .social-link{
+  color: var(--bg-hr);
+  font-size: 1rem;
+  padding: 0 5px
+}
+
+.footer .social-link:hover{
+  color: var(--gold);
+}
+/* -----------------------------------------------------------------------------
+|                     Footer Section End                                      |
+ ---------------------------------------------------------------------------- */
+
+@media screen and (max-width:576px) {
+  .home-section h1{
+    font-size: 2rem;
+    padding-top: 10rem;
+    text-align: center;
+  }
+  .home-section h3{
+    font-size: 3rem;
+    text-align: center;
+  }
+  .home-section h4{
+    font-size: 1.9rem;
+    text-align: center;
+  }
+  .home-section p{
+    text-align: center;
+  }
+  .about-section h2{
+    font-size: 1.1rem
+  }
+  .about-section h3{
+    font-size: 1rem
+  }
+  .skills-section .heading-title::after{
+    font-size: 1rem;
+  }
+  .skills-section .right{
+    padding-top: 20px;
+  }
+  .contact-section .heading-title::after {
+    font-size: 0.8rem;
+  }
+  .contact-section .heading-title{
+    font-size: 1.9rem;
+  }
+  .footer ul{
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width:360px) {
+  .skills-section .left .chart{
+    display: flex;
+    justify-content: center;
+    left: 20%;
+  }
+}
+
+@media screen and (max-width:280px) {
+  .home-section h3{
+    font-size: 6vh;
+  }
+  section .heading-title{
+    font-size: 1.6rem;
+    padding-bottom: 10px;
+  }
+  section .heading-title::after{
+    font-size: 0.6rem;
+  }
+  .skills-section .heading-title::after {
+    font-size: 10px;
+  }
+  .work-section .heading-title {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+  }
+  .contact-section .heading-title {
+    font-size: 1.4rem;
+    padding-bottom: 10px;
+  }
+  .contact-section .heading-title::after {
+    font-size: 5px;
+    padding-bottom: 10px;
+  }
+  .contact-section .social-link{
+    padding: 5px;
+  }
+  .about-section .social-link{
+    padding:2px;
+  }
+}
